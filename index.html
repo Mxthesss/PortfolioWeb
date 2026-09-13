@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Portfolio | Začínající Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234361ee'/><text x='50%' y='68%' font-size='60' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> 
+            <span id="logo-jmeno">Matěj Bednář</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#o-mne">O mně</a></li>
+                <li><a href="#projekty">Projekty</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle"><i class="fa-solid fa-moon"></i> Tmavý režim</button>
+    </header>
+
+    <main>
+        <section id="o-mne" class="reveal">
+            <h1 id="typing-text"></h1>
+            <p class="bio">
+                Moje cesta k programování začala u herní platformy FiveM. Podílel jsem se jako vývojář na serverech Enjoy RP a LifeM RP, kde jsem psal skripty v Lua a poprvé si reálně osahal i HTML a CSS. I když tyhle projekty už skončily, kódování mě chytlo. Aktuálně tvořím a prodávám vlastní custom skripty v Lua a rozhodl jsem se naplno ponořit do klasického web developmentu.
+            </p>
+            
+            <div class="dovednosti">
+                <span class="tag"><i class="fa-solid fa-gamepad"></i> Lua</span>
+                <span class="tag"><i class="fa-brands fa-html5"></i> HTML</span>
+                <span class="tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                <span class="tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                <span class="tag"><i class="fa-brands fa-github"></i> Git & GitHub</span>
+            </div>
+        </section>
+
+        <section id="projekty" class="reveal">
+            <h2>Co mám v plánu kódit</h2>
+            <p class="podnadpis">Zatím tu nemám žádné hotové aplikace, protože se zrovna učím základy. Abych ale nestál na místě, vymyslel jsem si tyhle tři věci, které chci v nejbližší době postavit.</p>
+            
+            <div class="projekt-grid">
+                <div class="projekt-karta">
+                    <div class="projekt-nahled"><i class="fa-solid fa-list-check"></i></div>
+                    <h3>1. To-Do List</h3>
+                    <p>Úplná klasika na procvičení JavaScriptu. Chci udělat jednoduchou appku na úkoly, které se uloží do paměti prohlížeče, abych pochopil základy práce s daty.</p>
+                    <span class="btn-projekt" style="background-color: transparent; border: 2px solid var(--text-color); color: var(--text-color); opacity: 0.6; cursor: default;">
+                        Právě na tom dělám ⏳
+                    </span>
+                </div>
+                
+                <div class="projekt-karta">
+                    <div class="projekt-nahled"><i class="fa-solid fa-mug-hot"></i></div>
+                    <h3>2. Fiktivní web kavárny</h3>
+                    <p>Zkouška responzivity. Jednoduchá landing page, abych si zažil CSS Flexbox a Grid a zkusil si, jak se web láme na mobilu.</p>
+                    <span class="btn-projekt" style="background-color: transparent; border: 2px solid var(--text-color); color: var(--text-color); opacity: 0.6; cursor: default;">
+                        Další na řadě 🔜
+                    </span>
+                </div>
+
+                <div class="projekt-karta">
+                    <div class="projekt-nahled"><i class="fa-solid fa-key"></i></div>
+                    <h3>3. Generátor hesel</h3>
+                    <p>Jednoduchý skript, co po kliknutí vygeneruje náhodné bezpečné heslo. Chci si na tom procvičit psaní vlastních funkcí v JS a práci s textovými řetězci.</p>
+                    <span class="btn-projekt" style="background-color: transparent; border: 2px solid var(--text-color); color: var(--text-color); opacity: 0.6; cursor: default;">
+                        V plánu 📝
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="reveal">
+            <h2>Napište mi</h2>
+            <p>Máte pro mě radu do začátků, nápad na projekt, nebo hledáte nadšeného juniora? Budu rád za každou zprávu.</p>
+            
+            <form action="https://formspree.io/f/mrpgwzdq" method="POST" class="kontakt-formular">
+                <div class="form-skupina">
+                    <label for="jmeno"><i class="fa-solid fa-user"></i> Vaše jméno</label>
+                    <input type="text" id="jmeno" name="jmeno" required placeholder="Např. Jan Novák">
+                </div>
+                
+                <div class="form-skupina">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Váš e-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="jan@email.cz">
+                </div>
+                
+                <div class="form-skupina">
+                    <label for="zprava"><i class="fa-solid fa-comment-dots"></i> Zpráva</label>
+                    <textarea id="zprava" name="zprava" rows="5" required placeholder="Dobrý den, zaujalo mě vaše portfolio..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn-odeslat"><i class="fa-solid fa-paper-plane"></i> Odeslat zprávu</button>
+            </form>
+        </section>
+    </main>
+
+    <button id="btn-nahoru" title="Zpět nahoru"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/Mxthesss" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/matej.bednar._/"><i class="fa-brands fa-instagram"></i></a> 
+        </div>
+        <p>Poháněno ☕ Napsal <a href="https://github.com/Mxthesss" target="_blank">Mxthesss</a> &copy; 2026</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

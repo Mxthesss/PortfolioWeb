@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #334155;
+    --primary-color: #4361ee;
+    --card-bg: #ffffff;
+    --header-bg: rgba(255, 255, 255, 0.85);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --bg-color: #0f172a;
+    --text-color: #f8fafc;
+    --primary-color: #3b82f6;
+    --card-bg: #1e293b;
+    --header-bg: rgba(15, 23, 42, 0.85);
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+::selection {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2b45cc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--header-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.4s ease;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#logo-jmeno {
+    transition: opacity 0.4s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+button#theme-toggle {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+button#theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+.podnadpis {
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+#o-mne {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#o-mne h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    min-height: 1.2em; 
+}
+
+.bio {
+    max-width: 800px;
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.dovednosti {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background-color: rgba(67, 97, 238, 0.1);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 1px solid rgba(67, 97, 238, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+.tag:hover {
+    transform: translateY(-3px);
+}
+.dark-mode .tag {
+    background-color: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.filtry {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--text-color);
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.aktivni {
+    background: var(--primary-color);
+    color: white;
+}
+
+.projekt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.projekt-karta {
+    background-color: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.projekt-karta.skryty {
+    display: none; 
+}
+
+.projekt-karta:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.projekt-nahled {
+    background-color: var(--bg-color);
+    height: 180px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.projekt-karta h3 {
+    margin-bottom: 10px;
+}
+
+.projekt-karta p {
+    margin-bottom: 20px;
+    font-size: 0.95em;
+    opacity: 0.8;
+}
+
+.btn-projekt {
+    margin-top: auto;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.btn-projekt:hover {
+    background-color: #2b45cc;
+    transform: scale(1.03);
+}
+
+.kontakt-formular {
+    max-width: 600px;
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+}
+
+.form-skupina {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-skupina label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-skupina input,
+.form-skupina textarea {
+    padding: 12px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1em;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+.dark-mode .form-skupina input,
+.dark-mode .form-skupina textarea {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-odeslat {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn-odeslat:hover {
+    background-color: #2b45cc;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+    background-color: var(--card-bg);
+}
+
+footer p a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+.social-icons {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+.social-icons a {
+    color: var(--text-color);
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; }
+    nav ul { flex-wrap: wrap; justify-content: center; }
+    #o-mne h1 { font-size: 2.2em; }
+}
+
+#btn-nahoru {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    opacity: 0; 
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+#btn-nahoru.zobrazit {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#btn-nahoru:hover {
+    background-color: #2b45cc;
+    transform: translateY(-5px);
+}
+.dark-mode #btn-nahoru:hover {
+    background-color: #2563eb;
+}
